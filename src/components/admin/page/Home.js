@@ -2,6 +2,7 @@ import React from 'react';
 
 function Home(props) {
     return (
+        
         <div className='home'>
             <h1>Home</h1>
             <ul className="insights">

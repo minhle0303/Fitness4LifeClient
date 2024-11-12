@@ -6,6 +6,10 @@ import Home from './components/admin/page/Home';
 import AdminDashboard from './components/admin/page/AdminDashboard';
 import AdminLayout from './components/layout/AdminLayout';
 import MainLayout from './components/layout/MainLayout';
+import Footer from './components/main/Footer';
+import MainHeader from './components/main/MainHeader';
+import Blog from './components/main/Blog';
+import BlogDetail from './components/main/BlogDetail';
 
 
 const App = () => {
@@ -17,10 +21,12 @@ const App = () => {
       <Routes>
         {/* trang main */}
         <Route path="/" element={<MainLayout />}>
+        
         </Route>
 
-        <Route>
-          
+        <Route element={<><MainHeader/><Outlet /><Footer /></>}>
+        <Route path='/blog' element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogDetail />} />
         </Route>
 
         {/* Trang  Admin */}
