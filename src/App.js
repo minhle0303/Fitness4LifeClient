@@ -17,7 +17,10 @@ const App = () => {
       <Routes>
         {/* trang main */}
         <Route path="/" element={<MainLayout />}>
+        </Route>
 
+        <Route>
+          
         </Route>
 
         {/* Trang  Admin */}

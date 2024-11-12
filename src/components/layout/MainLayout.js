@@ -18,7 +18,6 @@ function MainLayout(props) {
     return (
         <div id='home'> 
         <MainHeader />
-        
         <HeroBanner/>
         <Service/>
         <About/>
