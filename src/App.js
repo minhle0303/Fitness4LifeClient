@@ -8,8 +8,11 @@ import AdminLayout from './components/layout/AdminLayout';
 import MainLayout from './components/layout/MainLayout';
 import Footer from './components/main/Footer';
 import MainHeader from './components/main/MainHeader';
-import Blog from './components/main/Blog';
-import BlogDetail from './components/main/BlogDetail';
+import Blog from './components/main/blog/Blog';
+import BlogDetail from './components/main/blog/BlogDetail';
+import ContactForm from './components/main/contact/ContactForm';
+import Login from './components/main/login/Login';
+import Registration from './components/main/login/Registration';
 
 
 const App = () => {
@@ -25,8 +28,13 @@ const App = () => {
         </Route>
 
         <Route element={<><MainHeader/><Outlet /><Footer /></>}>
+        <Route path='/login' element={<Login />} />
+        <Route path='/registration' element={<Registration />} />
+
         <Route path='/blog' element={<Blog />} />
         <Route path="/blog/:id" element={<BlogDetail />} />
+        <Route path="/contact-us/" element={<ContactForm />} />
+
         </Route>
 
         {/* Trang  Admin */}

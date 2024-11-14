@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../../assets/images/logo.png'; // Import the logo image
+import { Link } from 'react-router-dom';
 
 const MainHeader = () => {
   return (
@@ -13,20 +14,27 @@ const MainHeader = () => {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand" href="index.html">
-              <img src={logo} alt="logo" />
-            </a>
+            <div style={{ textAlign: "center", marginTop: "20px", marginBottom: "20px" }}>
+            <Link to="/" className="logo"> <div className="logo-name" style={{ fontSize: "28px" }}><span>FITNESS</span>4LIFE</div></Link>
+             
+            </div>
           </div>
 
           <div className="collapse navbar-collapse navbar-right">
             <ul className="nav navbar-nav">
-              <li className="scroll active"><a href="#home">Home</a></li>  
+              <li className="scroll active"><a href="#home">Home</a></li>
               <li className="scroll"><a href="#services">Classes</a></li>
-              <li className="scroll"><a href="#about">About</a></li> 
+              <li className="scroll"><a href="#about">About</a></li>
               <li className="scroll"><a href="#our-team">Trainers</a></li>
               <li className="scroll"><a href="#portfolio">Gallery</a></li>
               <li className="scroll"><a href="#pricing">Pricing</a></li>
-              <li className="scroll"><a href="#contact-us">Contact</a></li>                        
+              <li className="scroll"><Link to="/blog">Blog</Link></li>
+              <li className="scroll"><Link to="/contact-us">Contact</Link></li>
+              <li className="scroll">
+      <a href="/login">
+        <i className="fa fa-sign-in" aria-hidden="true"></i> Login
+      </a>
+    </li>
             </ul>
           </div>
         </div>

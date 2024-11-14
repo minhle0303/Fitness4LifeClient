@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'; // import Link for navigation
 import axios from 'axios';
-import '../../assets/css/blog.css';
+import '../../../assets/css/blog.css';
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
@@ -57,7 +57,9 @@ const Blog = () => {
   return (
     <section id="services">
       <div style={{ textAlign: "center", marginTop: "50px", marginBottom: "40px" }}>
-        <h2>BLOGS</h2>
+      <div href="#" className="logo">
+                <div className="logo-name"><span>Daily</span> Blogs</div>
+            </div>
       </div>
 
       {loading ? (

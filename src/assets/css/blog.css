@@ -53,12 +53,23 @@ p {
   /* Style for pagination buttons */
   .pagination button {
 	padding: 8px 16px;
-	background-color: #4CAF50;
-	color: white;
-	border: none;
+	border: 0;
+	color: #fff;
+	font-size: 14px;
 	cursor: pointer;
-	font-size: 16px;
-	margin: 0 10px; /* Add some space between the buttons */
+	font-weight: 400;
+	padding: 6px 13px;
+	position: relative;
+	background: var(--orgrage);
+	white-space: nowrap;
+	display: inline-block;
+	text-decoration: none;
+  }
+  .pagination button:hover {
+	color: #f6f6f6;
+	text-decoration: none;
+	transition: all 0.3s ease-in-out;
+	background-color: var(--primary);
   }
   
   .pagination button:disabled {
@@ -187,5 +198,15 @@ p {
 	.related-blog-link {
 	  font-size: 16px;
 	}
+  }
+  
+
+  .blog-list-item {
+	display: flex;
+	transition: background-color 0.3s ease;
+  }
+  
+  .blog-list-item:hover {
+	background-color: #c3baba;
   }
   
