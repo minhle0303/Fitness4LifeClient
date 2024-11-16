@@ -1,18 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
-const Sidebar = () => {
+const Sidebar = ({ setMenuItems }) => {
     const initialIndex = parseInt(localStorage.getItem('activeIndex')) || 0;
     const [activeIndex, setActiveIndex] = useState(initialIndex);
 
-    const menuItems = [
+    const menuItems = useMemo(() => [
         { label: 'Dashboard', icon: 'bxs-dashboard', path: '/admin/dashboard' },
         { label: 'Shop', icon: 'bx-store-alt', path: '/admin/home' },
-        { label: 'Analytics', icon: 'bx-analyse', path: '/admin/home' },
+        { label: 'Blogs', icon: 'bx-analyse', path: '/admin/blog' },
         { label: 'Tickets', icon: 'bx-message-square-dots', path: '/admin/home' },
         { label: 'Users', icon: 'bx-group', path: '/admin/home' },
         { label: 'Settings', icon: 'bx-cog', path: '/admin/home' }
-        
-    ];
+    ], []); // Đảm bảo menuItems chỉ được tạo 1 lần khi component render lần đầu
+
+    useEffect(() => {
+        setMenuItems(menuItems); // Truyền menuItems lên AdminLayout
+    }, [menuItems, setMenuItems]);
 
     const handleSetActiveIndex = (index) => {
         setActiveIndex(index);

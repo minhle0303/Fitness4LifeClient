@@ -13,6 +13,7 @@ import BlogDetail from './components/main/blog/BlogDetail';
 import ContactForm from './components/main/contact/ContactForm';
 import Login from './components/main/login/Login';
 import Registration from './components/main/login/Registration';
+import BlogAdmin from './components/admin/blog/BlogAdmin';
 
 
 const App = () => {
@@ -42,6 +43,8 @@ const App = () => {
           <Route index element={<AdminDashboard />} />
           <Route path="dashboard" element={<AdminDashboard />} />
           <Route path="home" element={<Home />} />
+          <Route path="blog" element={<BlogAdmin />} />
+
         </Route>
       </Routes>
     </Router>
