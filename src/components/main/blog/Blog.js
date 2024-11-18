@@ -75,7 +75,12 @@ const Blog = () => {
                 src={blog.thumbnailUrl[0].imageUrl}
                 alt={blog.title}
                 className="blog-thumbnail"
-                style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+                style={{
+                  width: '550px', // Chiều rộng cố định
+                  height: '300px', // Chiều cao cố định
+                  borderRadius: '8px',
+                  objectFit: 'cover', // Đảm bảo ảnh được cắt hoặc co giãn đúng tỷ lệ
+                }}
               />
               <h3>
                 <Link to={`/blog/${blog.id}`}>{blog.title}</Link>

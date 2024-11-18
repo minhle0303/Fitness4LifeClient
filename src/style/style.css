@@ -445,7 +445,7 @@ body{
 
 .content main .bottom-data .header h3{
     margin-right: auto;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 600;
 }
 
@@ -758,3 +758,131 @@ body{
     background-color: var(--orange);
     opacity: 0.9;
 }
+
+/* ---- */
+
+  /* BlogAdmin.css */
+
+/* Tổng quan chung */
+.bottom-data {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  /* Header */
+
+  
+  .orders .header h3 {
+    font-size: 1.8rem;
+    color: #333;
+    font-weight: bold;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .orders .header h3:hover {
+    color: var(--orange); /* Màu xanh đẹp khi hover */
+  }
+  
+  /* Search Field */
+  .text-field {
+    width: 50%;
+  }
+  
+  .text-field input {
+    font-size: 20px; /* Phông chữ to hơn */
+  }
+  
+  
+  
+  /* DataGrid Container */
+  .bottom-data .orders .header .data-grid {
+    height: 500px;
+    width: 100%;
+    font-size: 20px; /* Phông chữ của DataGrid */
+  }
+  
+  /* Các nút hành động */
+  .action-btn {
+    cursor: pointer;
+    color: #333;
+    transition: all 0.3s ease;
+  }
+  
+  .action-btn.edit-btn:hover, 
+  .action-btn.delete-btn:hover {
+    color: var(--orange); /* Màu xanh khi hover vào nút Edit */
+    transform: scale(1.1); /* Phóng to nhẹ khi hover */
+  }
+  
+  .action-btn.edit-btn:hover i, 
+  .action-btn.delete-btn:hover i {
+    color: var(--orange); /* Màu xanh cho icon khi hover vào nút Edit */
+  }
+  
+  .action-btn.delete-btn:hover {
+    color: #d32f2f; /* Màu đỏ khi hover vào nút Delete */
+  }
+  
+  .action-btn.delete-btn:hover i {
+    color: #d32f2f; /* Màu đỏ cho icon khi hover vào nút Delete */
+  }
+  
+  /* Hiệu ứng hover cho các hàng trong DataGrid */
+  .MuiDataGrid-row:hover {
+    background-color: #f1f1f1; /* Màu nền khi hover */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Pagination Custom Footer */
+  .MuiPagination-root {
+    margin-top: 10px;
+  }
+  
+  .MuiPaginationItem-root {
+    font-size: 1rem;
+    color: var(--orange);
+    transition: all 0.3s ease;
+  }
+  
+  .MuiPaginationItem-root:hover {
+    background-color: #e3f2fd; /* Màu nền khi hover */
+    color: var(--orange); /* Màu chữ đậm hơn */
+  }
+
+  /* Custom Tooltip Styles */
+.custom-tooltip .MuiTooltip-tooltip {
+    background-color: var(--orange);  /* Set background color to orange */
+    color: white;  /* Set text color to white */
+    border-radius: 5px;  /* Optional: Rounded corners */
+    padding: 8px 12px;  /* Padding for better spacing */
+    font-size: 14px;  /* Set font size */
+    
+    /* Smooth transition for the tooltip appearance */
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Apply when the tooltip becomes visible */
+  .custom-tooltip .MuiTooltip-tooltipVisible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Add blurred background effect behind the tooltip */
+  .custom-tooltip .MuiTooltip-tooltip::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);  /* Slight transparent overlay */
+    backdrop-filter: blur(5px);  /* Apply blur effect */
+    border-radius: 5px;  /* Optional: Rounded corners */
+    z-index: -1;  /* Place the overlay behind the tooltip */
+  }
+  
