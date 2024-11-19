@@ -151,7 +151,7 @@ body{
 }
 
 .sidebar .side-menu li.active a{
-    color: var(--success);
+    color: var(--orange);
 }
 
 .sidebar.close .side-menu li a{
@@ -800,7 +800,8 @@ body{
   .bottom-data .orders .header .data-grid {
     height: 500px;
     width: 100%;
-    font-size: 20px; /* Phông chữ của DataGrid */
+    font-size: 20px; 
+    /* Phông chữ của DataGrid */
   }
   
   /* Các nút hành động */
@@ -840,6 +841,22 @@ body{
   .MuiPagination-root {
     margin-top: 10px;
   }
+  .MuiDataGrid-pagination {
+    margin-top: 16px; /* Thêm khoảng cách phía trên pagination */
+    display: flex;
+    justify-content: center; /* Căn giữa các điều khiển phân trang */
+    padding: 10px 0;
+  }
+  .MuiDataGrid-cell {
+    padding: 12px; /* Giữ khoảng cách đều giữa các cell */
+    border-bottom: 1px solid #e0e0e0; /* Border cho mỗi row */
+  }
+  .MuiDataGrid-columnHeader {
+    background-color: #f5f5f5; /* Màu nền cho header */
+    border-bottom: 2px solid #e0e0e0; /* Thêm border dưới header */
+    font-weight: bold; /* Font chữ đậm cho header */
+  }
+  
   
   .MuiPaginationItem-root {
     font-size: 1rem;
@@ -885,4 +902,37 @@ body{
     border-radius: 5px;  /* Optional: Rounded corners */
     z-index: -1;  /* Place the overlay behind the tooltip */
   }
+  .img-box-modal{
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+  }
+  .alert-container {
+    display: flex;
+    margin-top: 16px;
+  }
   
+  .alert {
+    background-color: #81c784; /* success.light */
+    color: white;
+    font-weight: 900;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1.3rem;
+    padding: 12px 24px;
+    border-radius: 8px;
+    animation: fadeIn 0.5s;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .sidebar.close {
+    width: 60px; /* Example: adjust the width to collapse the sidebar */
+  }

@@ -26,24 +26,38 @@ export default function CreateBlogModal({ open, onClose, onBlogCreated }) {
         const files = e.target.files;
         const validFormats = ['image/jpeg', 'image/png', 'image/jpg'];
         let isValid = true;
-
+    
+        // Check if files are valid
         for (let i = 0; i < files.length; i++) {
             if (!validFormats.includes(files[i].type)) {
                 isValid = false;
                 break;
             }
         }
-
+    
+        // If files are valid
         if (isValid) {
             setFormData((prev) => ({
                 ...prev,
-                thumbnailUrl: files,
+                thumbnailUrl: files, // Ensure this is always an array of files
             }));
             setErrors((prev) => ({ ...prev, thumbnailUrl: null }));
         } else {
-            setErrors((prev) => ({ ...prev, thumbnailUrl: 'Invalid file type. Only .jpeg, .jpg, and .png are allowed.' }));
+            setErrors((prev) => ({
+                ...prev,
+                thumbnailUrl: 'Invalid file type. Only .jpeg, .jpg, and .png are allowed.',
+            }));
+        }
+    
+        // Check if at least one file is selected
+        if (files.length === 0) {
+            setErrors((prev) => ({
+                ...prev,
+                thumbnailUrl: 'At least one image is required.',
+            }));
         }
     };
+    
 
     const validateField = async (fieldName, value) => {
         let error = null;
@@ -69,6 +83,12 @@ export default function CreateBlogModal({ open, onClose, onBlogCreated }) {
             case 'tags':
                 if (!value.trim()) error = 'Tags are required';
                 break;
+                case 'thumbnailUrl':
+                    // Ensure that value is always an array and check if it has any files
+                    if (!value || value.length === 0) {
+                        error = 'At least one image is required.';
+                    }
+                    break;
             default:
                 break;
         }
@@ -112,6 +132,9 @@ export default function CreateBlogModal({ open, onClose, onBlogCreated }) {
             await createBlog(formDataToSubmit);
             onBlogCreated();
             onClose();
+            if (typeof onBlogCreated === 'function') {
+                onBlogCreated('Blog create successfully!');
+            }
         } catch (err) {
             console.error('Error creating blog', err);
         }
@@ -173,9 +196,11 @@ export default function CreateBlogModal({ open, onClose, onBlogCreated }) {
                             value={formData.category}
                             onChange={handleChange}
                         >
-                            <MenuItem value="Technology">Technology</MenuItem>
-                            <MenuItem value="Lifestyle">Lifestyle</MenuItem>
-                            <MenuItem value="Business">Business</MenuItem>
+                            <MenuItem value="Nutrition & Diet">Nutrition & Diet</MenuItem>
+                            <MenuItem value="Lifestyle & Health">Lifestyle & Health</MenuItem>
+                            <MenuItem value="Trends & Innovations">Trends & Innovations</MenuItem>
+                            <MenuItem value="Workouts & Training"> Workouts & Training</MenuItem>
+
                         </Select>
                         {errors.category && <p style={{ color: 'red', marginTop: '5px' }}>{errors.category}</p>}
                     </FormControl>
