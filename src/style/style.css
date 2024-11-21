@@ -936,3 +936,44 @@ body{
   .sidebar.close {
     width: 60px; /* Example: adjust the width to collapse the sidebar */
   }
+  .modal-box-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    max-height: 90vh;
+    background-color: var(--mui-background-paper, #fff);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Bóng đổ mềm mại */
+    padding: 20px; /* Padding lớn hơn để nội dung rộng rãi hơn */
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow-y: auto;
+    
+    /* Viền và bo góc */
+    border: 1px solid #ddd; /* Viền mỏng và nhẹ */
+    border-radius: 10px; /* Bo tròn các góc */
+    
+    /* Thêm hiệu ứng nhẹ khi hover */
+    transition: all 0.3s ease;
+  }
+  
+  .modal-box-form:hover {
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.15); /* Bóng đổ mạnh hơn khi hover */
+    transform: translate(-50%, -50%) scale(1.05); /* Phóng to một chút khi hover */
+  }
+  
+  /* Tạo một hiệu ứng nền mờ cho modal khi mở */
+  .MuiModal-root.MuiModal-open {
+    background-color: rgba(0, 0, 0, 0.5); /* Nền mờ khi mở modal */
+  }
+  
+  /* Thêm hiệu ứng cho modal */
+  .modal-open {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .modal-closed {
+    transform: translate(-50%, -50%) scale(0.95);
+  }

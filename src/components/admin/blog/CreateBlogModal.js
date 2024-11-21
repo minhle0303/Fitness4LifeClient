@@ -143,17 +143,7 @@ export default function CreateBlogModal({ open, onClose, onBlogCreated }) {
     return (
         <Modal open={open} onClose={onClose}>
             <Box
-                sx={{
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    transform: 'translate(-50%, -50%)',
-                    width: 800,
-                    bgcolor: 'background.paper',
-                    borderRadius: 1,
-                    boxShadow: 24,
-                    p: 4,
-                }}
+            className="modal-box-form"
             >
                 <h2>Create New Blog</h2>
                 <form onSubmit={handleSubmit}>
